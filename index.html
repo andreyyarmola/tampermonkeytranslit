@@ -6,20 +6,19 @@
 
 	<input type="text" size="40" onkeypress="myFunction(event)">
 
-	<p id="demo"></p>
+	<p id="mystring"></p>
 
 	<script>
 
 	function myFunction(event) {
-	  var x = event.keyCode;
-		if (x==102) {
-			document.getElementById("demo").innerHTML = "ф";
+	  var whatIjustPressed = event.keyCode;
+		if (whatIjustPressed==102) {
+			document.getElementById("mystring").innerHTML = "ф";
 		} else {
-			document.getElementById("demo").innerHTML = String.fromCharCode(x);
+			document.getElementById("mystring").innerHTML = String.fromCharCode(whatIjustPressed);
 		}
 
-
-	}
+}
 	</script>
 
 	</body>
