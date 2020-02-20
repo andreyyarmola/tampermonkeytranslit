@@ -1,2 +1,27 @@
-<html>
+<html lang="en-US">
+	<head>
+		<title>hello</title>
+	</head>
+	<body>
+
+	<input type="text" size="40" onkeypress="myFunction(event)">
+
+	<p id="demo"></p>
+
+	<script>
+
+	function myFunction(event) {
+	  var x = event.keyCode;
+		if (x==102) {
+			document.getElementById("demo").innerHTML = "ф";
+		} else {
+			document.getElementById("demo").innerHTML = String.fromCharCode(x);
+		}
+
+
+	}
+	</script>
+
+	</body>
+	</body>
 </html>
