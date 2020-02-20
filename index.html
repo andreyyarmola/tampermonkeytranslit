@@ -4,20 +4,21 @@
 	</head>
 	<body>
 
-	<input type="text" size="40" onkeypress="myFunction(event)">
+	<input type="text" size="40" onkeypress="translitFunction(event)">
 
 	<p id="mystring"></p>
 
 	<script>
 
-	function myFunction(event) {
+	function translitFunction(event) {
 	  var whatIjustPressed = event.keyCode;
+		var typedLetter;
 		if (whatIjustPressed==102) {
-			document.getElementById("mystring").innerHTML = "ф";
+			typedLetter = "ф";
 		} else {
-			document.getElementById("mystring").innerHTML = String.fromCharCode(whatIjustPressed);
+			typedLetter = String.fromCharCode(whatIjustPressed);
 		}
-
+		document.getElementById("mystring").innerHTML = typedLetter;
 }
 	</script>
 
