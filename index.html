@@ -4,22 +4,30 @@
 	</head>
 	<body>
 
-	<input type="text" size="40" onkeypress="translitFunction(event)">
-
-	<p id="mystring"></p>
+	<input type="text" size="40" onkeypress="translitFunction(event); stringBuildFunction()">
+	<p id="fulltranslitstring"></p>
 
 	<script>
 
+var typedLetter;
+var typedText = "";
+
+//this function replaces latin letter with a cyrillic equivalent
 	function translitFunction(event) {
 	  var whatIjustPressed = event.keyCode;
-		var typedLetter;
 		if (whatIjustPressed==102) {
 			typedLetter = "ф";
 		} else {
 			typedLetter = String.fromCharCode(whatIjustPressed);
 		}
-		document.getElementById("mystring").innerHTML = typedLetter;
 }
+
+//this function adds what has been typed into a string
+	function stringBuildFunction() {
+    typedText = typedText + typedLetter;
+			document.getElementById("fulltranslitstring").innerHTML = typedText;
+  }
+
 	</script>
 
 	</body>
