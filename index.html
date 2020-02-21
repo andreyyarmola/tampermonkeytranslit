@@ -4,7 +4,7 @@
 	</head>
 	<body>
 
-	<input type="text" size="40" onkeypress="translitFunction(event); stringBuildFunction()">
+	<input type="text" id = "textField" size="40" onkeypress="translitFunction(event); stringBuildFunction(); replaceTypedFunction()">
 	<p id="fulltranslitstring"></p>
 
 	<script>
@@ -25,8 +25,13 @@ var typedText = "";
 //this function adds what has been typed into a string
 	function stringBuildFunction() {
     typedText = typedText + typedLetter;
-			document.getElementById("fulltranslitstring").innerHTML = typedText;
+//			document.getElementById("fulltranslitstring").innerHTML = typedText;
   }
+
+//this function replaces what you type with transliterated string (var typedText)
+	function replaceTypedFunction() {
+		document.getElementById("textField").value = typedText;
+	}
 
 	</script>
 
