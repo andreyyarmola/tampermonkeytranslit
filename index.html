@@ -2,10 +2,11 @@
 	<head>
 		<title>hello</title>
 	</head>
-	<body>
+	<body onkeypress="translitFunction(event)">
 
-	<input type="text" id = "textField" size="40" onkeypress="translitFunction(event)">
-	<p id="fulltranslitstring"></p>
+	<input type="text" id = "textField" size="40">
+	<input type="text" id = "anotherTextField" size="30"
+	<p id="fulltranslitstring">this is some text</p>
 
 	<script>
 
@@ -20,7 +21,7 @@ var typedText = "";
 			typedLetter = String.fromCharCode(whatIjustPressed);
 		}
 			typedText = typedText + typedLetter;
-			document.getElementById("textField").value = typedText;
+			document.activeElement.value = typedText;
 		}
 	</script>
 
