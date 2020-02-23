@@ -1,8 +1,8 @@
 <html lang="en-US">
 	<head>
-		<title>hello</title>
+		<title>translit</title>
 	</head>
-	<body onkeypress="translitFunction(event)">
+	<body>
 
 	<input type="text" id = "textField" size="40">
 	<input type="text" id = "anotherTextField" size="30"
@@ -12,17 +12,19 @@
 
 var typedText = "";
 
-	function translitFunction(event) {
-	  var whatIjustPressed = event.keyCode;
+document.activeElement.addEventListener("keyup",
+	function translitFunction(a) {
+	  var whatIjustPressed = a.key;
 		var typedLetter;
-		if (whatIjustPressed==102) {
+		if (whatIjustPressed=="f") {
 			typedLetter = "ф";
 		} else {
-			typedLetter = String.fromCharCode(whatIjustPressed);
+			typedLetter = whatIjustPressed;
 		}
 			typedText = typedText + typedLetter;
 			document.activeElement.value = typedText;
-		}
+		});
+
 	</script>
 
 	</body>
